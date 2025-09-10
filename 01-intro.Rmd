@@ -1,0 +1,56 @@
+# Resources
+
+These are the resources I used when I first started analysing Cut&Run/Cut&Tag data
+
+
+### Protocols
+
+* [CUT&Tag for efficient epigenomic profiling of small samples and single cells [Kaya-Okur et al 2019]](https://www.nature.com/articles/s41467-019-09982-5)
+* [Efficient low-cost chromatin profiling with CUT&Tag [Kaya-Okur et al 2020]](https://www.nature.com/articles/s41596-020-0373-x)
+
+![](https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41467-019-09982-5/MediaObjects/41467_2019_9982_Fig1_HTML.png?as=webp)
+
+From Kaya-Okur et al 2019:
+
+```
+The steps in CUT&Tag: Added antibody (green) binds to the target chromatin protein (blue) between nucleosomes (gray ovals) in the genome, and the excess is washed away. A second antibody (orange) is added and enhances tethering of pA-Tn5 transposome (gray boxes) at antibody-bound sites. After washing away excess transposome, addition of Mg++ activates the transposome and integrates adapters (red) at chromatin protein binding sites. After DNA purification genomic fragments with adapters at both ends are enriched by PCR. b CUT&Tag is performed on a solid support. Unfixed cells or nuclei (blue) are permeabilized and mixed with antibody to a target chromatin protein. After addition and binding of cells to Concanavilin A-coated magnetic beads (M), all further steps are performed in the same reaction tube with magnetic capture between washes and incubations, including pA-Tn5 tethering, integration, and DNA purification
+```
+
+![](https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41596-020-0373-x/MediaObjects/41596_2020_373_Fig1_HTML.png?as=webp)
+
+From Kaya-Okur et al 2020:
+
+```
+The protein A-Tn5 (pA-Tn5) transposome, when loaded with mosaic end adapters and activated by magnesium ions, integrates the adapters into nearby DNA to create fragments that are amplifiable to generate sequencing libraries.
+...
+CUT&Tag has an improved signal-to-noise ratio for histone marks, at least in part because an antibody-tethered Tn5 integrates its mosaic-end adapters and remains bound during the incubation. 
+...
+3 million mapped paired-end reads are usually sufficient for a genome-wide profile of a histone modification in human cells.
+
+```
+
+
+
+
+
+### Analysis
+
+* [CUT&RUN Processing Pipeline](https://data.4dnucleome.org/resources/data-analysis/cut-and-run-pipeline)
+* [CUT&Tag Data Processing and Analysis Tutorial [Ye Zheng et al 2020]](https://yezhengstat.github.io/CUTTag_tutorial/)
+* [Comprehensive Guide to Understanding and Using CUT&Tag Assays](https://www.activemotif.com/blog-cut-tag)
+
+
+From this analysis protocol [Ye Zhang 2020]:
+
+```
+In these example datasets, the IgG control samples have relatively high duplication rates, since reads in this sample derive from non-specific tagmentation in the CUT&Tag reactions. Therefore, it is appropriate to remove the duplicates from the IgG datasets before downstream analysis.
+```
+
+The IgG samples have a duplication rate of 35% and 80%. The rest of the samples have less than 6% duplication rate. 
+
+The fragment length distributions differ too. From the [Ye Zhang 2020]:
+
+```
+CUT&Tag inserts adapters on either side of chromatin particles in the vicinity of the tethered enzyme, although tagmentation within chromatin particles can also occur. So, CUT&Tag reactions targeting a histone modification predominantly results in fragments that are nucleosomal lengths (~180 bp), or multiples of that length. CUT&Tag targeting transcription factors predominantly produce nucleosome-sized fragments and variable amounts of shorter fragments, from neighboring nucleosomes and the factor-bound site, respectively. Tagmentation of DNA on the surface of nucleosomes also occurs, and plotting fragment lengths with single-basepair resolution reveal a 10-bp sawtooth periodicity, which is typical of successful CUT&Tag experiments.
+```
+![](https://yezhengstat.github.io/CUTTag_tutorial/figure/index.Rmd/unnamed-chunk-17-1.png)
