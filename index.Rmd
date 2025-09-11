@@ -5,12 +5,12 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
-url: https://turnerlab-monashuni.github.io/cuttag_workshop_2025/
+# url: https://turnerlab-monashuni.github.io/cuttag_workshop_2025/
 # cover-image: path to the social sharing image like images/cover.jpg
 description: |
   This is a tutorial for analysing Cut&Tag data.
-biblio-style: apalike
-csl: chicago-fullnote-bibliography.csl
+link-citations: yes
+github-repo: https://turnerlab-monashuni.github.io/cuttag_workshop_2025/
 ---
 
 # Introduction 
